@@ -3,13 +3,13 @@ class MemosController < ApplicationController
 
   # GET /memos
   def index
-    @todos = Todo.all
-    json_response(@todos)
+    @memos = Memo.all
+    json_response(@memos)
   end
 
   # POST /memos
   def create
-    @todo = Todo.create!(todo_params)
+    @todo = Memo.create!(todo_params)
     json_response(@todo, :created)
   end
 
@@ -38,6 +38,6 @@ class MemosController < ApplicationController
   end
 
   def set_todo
-    @todo = Todo.find(params[:id])
+    @todo = Memo.find(params[:id])
   end
 end
